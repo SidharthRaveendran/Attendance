@@ -1,5 +1,6 @@
 <?php
 
+Route::get('/', 'StaffController@index');
 Route::get('home', 'StaffController@index');
 
 Route::resource('student', 'UserResource');

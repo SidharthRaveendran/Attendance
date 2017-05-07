@@ -48,7 +48,7 @@ class AttendanceResource extends Controller
 
         $Attendance = [];
 
-        $Users = $request->except('_token', 'date', 'department_id', 'batch');
+        $Users = $request->except('_token', 'date', 'department_id', 'batch', 'datatable_length');
 
         foreach ($Users as $ID => $Status) {
             $Attendance[] = [

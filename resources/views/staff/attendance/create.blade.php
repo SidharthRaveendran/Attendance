@@ -93,7 +93,7 @@
 <script type="text/javascript">
 $(document).ready(function() {
 
-    var datatable = $('#datatable').DataTable( {
+    window.datatable = $('#datatable').DataTable( {
         data: [],
         columns: [
             { title: "Register No." },
@@ -109,7 +109,7 @@ $(document).ready(function() {
     }
 
     window.filter = function filter(input) {
-        console.log(input.value, input.name);
+        datatable.clear().draw();
         filter_data[input.name] = input.value;
         if(filter_data.department_id != null && filter_data.batch != null) {
             load_data()
@@ -124,7 +124,6 @@ $(document).ready(function() {
             type: 'GET',
             data: filter_data,
             success: function(data) {
-                console.log('Accept', data);
                 compile_datatable(data);
             }
         });
@@ -132,10 +131,10 @@ $(document).ready(function() {
 
     function compile_datatable(students) {
         var compiled = [];
-        console.log('students', students);
+        // console.log('students', students);
         datatable.clear();
         $.each(students, function(index, value) {
-            console.log(compiled);
+            // console.log(compiled);
             datatable.row.add([
                 value.email,
                 value.first_name,

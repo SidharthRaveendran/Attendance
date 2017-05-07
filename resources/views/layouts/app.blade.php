@@ -86,6 +86,10 @@
     <script src="{{ asset('js/datepicker.min.js') }}"></script>
     <script type="text/javascript">
         $('[data-toggle="datepicker"]').datepicker();
+        $('[data-toggle="datepicker-date"]').datepicker({
+            format: 'mm/dd/yyyy',
+            endDate: 'today'
+        });
         $('[data-toggle="datepicker-year"]').datepicker({
             format: 'yyyy',
             endDate: 'today'

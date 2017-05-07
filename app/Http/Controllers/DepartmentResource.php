@@ -44,7 +44,7 @@ class DepartmentResource extends Controller
 
         Department::create($request->all());
 
-        return back();
+        return redirect()->route('staff.department.index');
     }
 
     /**

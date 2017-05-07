@@ -25,10 +25,10 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label">Date Of Birth</label>
 
                             <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
+                                <input id="password" type="text" class="form-control" name="password" data-toggle="datepicker-date" required>
 
                                 @if ($errors->has('password'))
                                     <span class="help-block">
